@@ -8,10 +8,10 @@ FROM eclipse-temurin:22-jre-alpine
 
 WORKDIR /app
 
-COPY --from=build /app/target/config-0.3.jar .
+COPY --from=build /app/target/config-0.4.jar .
 
 RUN apk --no-cache add curl
 
 EXPOSE 8091
 
-CMD ["java", "-jar", "config-0.3.jar"]
+CMD ["java", "-jar", "config-0.4.jar"]
