@@ -40,6 +40,15 @@ spec:
           {{- end }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: SPRING_SECURITY_USER_NAME
+              value: {{ .Values.spring.security.user.name }}
+            - name: SPRING_SECURITY_USER_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "helm.fullname" . }}-secret
+                  key: db-password
+
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
