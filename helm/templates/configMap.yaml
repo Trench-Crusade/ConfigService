@@ -5,7 +5,7 @@ metadata:
 data:
   application.properties: |
     server.port=8888
-    spring.cloud.config.server.git.uri=http://gitea-http:3000/sedarius/config
+    spring.cloud.config.server.git.uri=http://gitea-http.default:3000/sedarius/config
     spring.cloud.config.server.git.clone-on-start=true
     spring.cloud.config.retry.initial-interval=20000
     spring.cloud.config.retry.max-attempts=10
