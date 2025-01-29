@@ -44,12 +44,12 @@ spec:
             - name: SPRING_SECURITY_USER_NAME
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "helm.fullname" . }}-secret
+                  name: config-secret
                   key: app-user
             - name: SPRING_SECURITY_USER_PASSWORD
               valueFrom:
                 secretKeyRef:
-                  name: {{ include "helm.fullname" . }}-secret
+                  name: config-secret
                   key: db-password
 
           ports:
