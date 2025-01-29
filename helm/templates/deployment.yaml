@@ -42,7 +42,10 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: SPRING_SECURITY_USER_NAME
-              value: {{ .Values.spring.security.user.name }}
+              valueFrom:
+                secretKeyRef:
+                  name: {{ include "helm.fullname" . }}-secret
+                  key: app-user
             - name: SPRING_SECURITY_USER_PASSWORD
               valueFrom:
                 secretKeyRef:

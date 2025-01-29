@@ -40,4 +40,3 @@ src/main/resources/application.properties
 .idea/sonarlint/*
 /helm/templates/configMap.yaml
 /helm/templates/secrets.yaml
-/helm/values.yaml
